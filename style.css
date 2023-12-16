@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+
+/* Landing page image */
+#main {
+    width: 50%;
+    display: block;
+    margin: auto;
+    
+
+}
+
+
+/* Header */
+
+header {
+    border: 4px solid white;
+    width: fit-content;
+    margin: 20px;
+   
+    
+}
+
+header a {
+    display: flex;
+}
+
+
+header h1 {
+    padding: 30px;
+}
+
+/* Links */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Logo Image */
+
+#logo {
+    
+    width: 60px;
+    margin: 8px;
+    justify-content: center;
+}
+
+
+/* Sign up or join */
+
+#signUp {
+    display: flex;
+    
+    margin: auto;
+    width: 50%;
+}
+
+/* Button Styles */
+
+.button {
+    background-color: white;
+   
+    margin: auto;
+    padding: 20px;
+    color: black;
+    font-weight: bold;
+    
+
+}
+
+.button:hover {
+    background-color: rgb(231, 231, 231);
+}
+
+.button:active {
+    background-color: rgb(199, 199, 199);
+}
+
+
+
+/* Home page main */
+
+#call {
+    
+    color: white;
+    padding: 30px 60px;
+    margin: auto;
+    width: fit-content;
+    border: 8px solid  white;
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+p {
+    border: 1px solid white;
+    width: fit-content;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+
+
+
+
+
+
+/* Form Styling */
+
+form {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    margin: auto;
+    padding: 60px;
+    border: 4px solid white;
+}
+
+form label {
+    background-color: white;
+    color: black;
+    width: fit-content;
+    padding: 5px 20px;
+    font-weight: bold;
+
+}
+
+.submit {
+    padding: 15px;
+    font-weight: bold;
+}
+
+.text {
+    width: 80%;
+    height: 40px;
+}
+
+input {
+    margin: 20px;
+}
