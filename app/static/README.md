@@ -1,0 +1,1 @@
+# This directory is dedicated to Flask finding all CSS and javascript/scripting

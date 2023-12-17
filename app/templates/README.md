@@ -1,0 +1,1 @@
+# This directory is specifically for Flask to find HTML files.
