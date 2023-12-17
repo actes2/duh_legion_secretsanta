@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <title>Sign Up</title>
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <img src="imgs/bonfiresmall.png" alt="" id="logo">
+        <a href="/">
+            <img src="{{url_for('static', filename='imgs/bonfiresmall.png')}}" alt="" id="logo">
             <h1>Duh Legion</h1>
         </a>
            
     </header>
-    <form action="">
+    <form action="/register" method="post">
         <label for="name">Name: </label>
         <input type="text" id="name" class="text">
         <label for="steamid">SteamID: </label>

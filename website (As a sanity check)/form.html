@@ -14,7 +14,15 @@
         </a>
            
     </header>
-    <form action="">
+    <!-- 
+    modified our form action to route us to /register, which is going to be resolved by the backend for sending bs off to the server
+    
+    We send it to the api via /register
+    We're sending stuff so it's a POST.
+
+    Basically it's just a "get all the stuff in this form and yeet-skeet em over in a little delivery"
+    -->
+    <form action="/register" method="post">
         <label for="name">Name: </label>
         <input type="text" id="name" class="text">
         <label for="steamid">SteamID: </label>
