@@ -5,7 +5,7 @@ The purpose of this repository is for the Duh Legion Secret Santa project
 
 ### Front-end Goals
 - We need a website
-  - A Javascript handshake needs to occur for transmitting data to our backend API.
+  - ~A Javascript handshake needs to occur for transmitting data to our backend API.~ Avery's got this with some whacky auto-redirect for session["name"] existence
   - ~We need an index page~
   - We need some snazzy flare to it
   - already_registered.html so we can route people here
@@ -18,11 +18,15 @@ ___________________
 
 DataBase stuff
 - We need to leverage a backend database for PUSHing info off to
-    Data Types to be anticipated:
+~Data Types to be anticipated:~
   
-      Name  SteamID  IPAddress
-      
-    *Justification is we need to make sure nobody is being a rude-dude and getting more presents that we anticipate.*
+~Name~ ~SteamID~ ~IPAddress~
+
+Turns out the actual data types were close:
+
+      name  steam_id  ip_addr  match
+
+  *Justification is we need to make sure nobody is being a rude-dude and getting more presents that we anticipate.*
 - We need to leverage a backend database for PULLing data from
 - All transactions to the Mongo DB will be handled by python queries
 
