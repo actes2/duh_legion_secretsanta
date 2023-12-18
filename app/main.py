@@ -11,6 +11,7 @@ app = Flask(__name__, static_folder="static")
 
 @app.route("/register", methods=["POST"])
 def register():
+    name = session["name"] if "name" in session else "none"
     if request.method == "POST" and "IP" not in session:
         print("New register!")
         details = request.form
@@ -32,14 +33,14 @@ def register():
 
 @app.route("/")
 def index():
-    if "name" in session:
-        return render_template("index.html", name=session["name"])
-    return render_template("index.html", name="none")
+    name = session["name"] if "name" in session else "none"
+    return render_template("index.html", name=name)
 
 
 @app.route("/form")
 def form():
-    return render_template("form.html")
+    name = session["name"] if "name" in session else "none"
+    return render_template("form.html", name=name)
 
 if __name__ == "__main__":
     print("Init!")
