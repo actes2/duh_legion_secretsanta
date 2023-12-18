@@ -33,7 +33,7 @@ if __name__ == "__main__":
     database = connect_toDB(*db_creds)
 
     createNewRecord(database, "Jimmy", "STEAMID:42069", "192.168.1.5")
-    createNewRecord(database, "Jimmy", "STEAMID:42069", "192.168.1.5")
+    createNewRecord(database, "Carl", "STEAMID:694120", "72.16.5.49")
     # collection = database["duh_legion_christmas"]
     # all_entries = collection.find()
     # for entry in all_entries:
