@@ -10,6 +10,7 @@ def grab_all_records(database):
 
     return list(result)
 
+
 def match_the_boys(database):
     """This function will be what dictates who will be secret santa for who"""
     collection = database["duh_legion_christmas"]

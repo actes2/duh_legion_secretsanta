@@ -1,6 +1,7 @@
 import os
 import json
 import requests as req
+import mongo_queries
 from flask import Flask, render_template, request, flash, session
 
 
@@ -44,7 +45,7 @@ def form():
 
 if __name__ == "__main__":
     print("Init!")
-
-    app.secret_key = "Jimmysacoolguyyyy" # Change this later to a github session token or something
+    
+    app.secret_key = "Jimmysacoolerguyyyy" # Change this later to a github session token or something
 
     app.run("0.0.0.0", port=80, debug=True)
