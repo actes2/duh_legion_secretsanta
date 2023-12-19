@@ -3,31 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="style.css">
+    
+    <!--
+    {{url_for('static', filename='style.css')}}
+    -->
+    
+    <!--
     {% if match %}
+    -->
 
     <title>Merry Christmas</title>
-
+    
+    <!--
     {% else %}
-
+    -->
+    
     <title>Waiting room</title>
 
-    {% endif %}
+    <!-- {% endif %} -->
+
 </head>
 <body>
-    <h1> Welcome to christmas land {{ name }} </h1>
+    <h1 class="welcome"> Welcome to to the waiting room, <span class="name">{{ name }}</span> </h1>
 
-    {% if match != "none" %}
+    <!-- {% if match != "none" %} -->
         
-        <div> Holy shit it's time merry christmas man! </div>
-        <div> Looks like you have to get a fucking gift for {{ match }} </div>
-        <br>
-        <a href="{{steam_url}}">You can find em' here!</a>
+        <p class="waiting"> Holy <span>shit</span> it's time, <span class="merry">merry</span> <span class="christmas">christmas</span> man! </p>
+        <p class="waiting"> Looks like you have to get a fucking gift for <span class="match">{{ match }}</span> </p>
+        
+        <a href="{{steam_url}}" class="steam">You can find em' here!</a>
 
-    {% else %}
+    <!--{% else %}-->
 
     <div> Look {{ name }} it's about time you leave... </div>
 
-    {% endif %}
+    <!-- {% endif %} -->
 </body>
 </html>
