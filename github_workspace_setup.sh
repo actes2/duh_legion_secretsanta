@@ -4,4 +4,4 @@ pip install Flask
 pip install requests
 pip install pymongo
 echo "" && echo ""
-echo "Lookin' good you're all set to configure port 80 and run \"python app/main.py\""
+echo "Lookin' good you're all set to configure port 80 and run \"./run_flask_server.sh\""
