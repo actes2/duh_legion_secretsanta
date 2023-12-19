@@ -43,6 +43,64 @@ body {
     }
 }
 
+
+@keyframes name {
+    25% {
+        transform: rotate(5deg) ;
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    
+}
+
+
+@keyframes name-leave {
+    25% {
+        transform: translateY(1px);
+        
+    }
+
+    75% {
+        transform: translateY(-1px);
+        
+    }
+}
+
+@keyframes leave {
+    20% {
+        transform: translate(5px,5px);
+        filter: blur(4px);
+        text-shadow: 0px 0px 10px red;
+    }
+
+    40% {
+        transform: translate(5px,-5px);
+        filter: blur(0);
+    }
+
+    60% {
+        transform: translate(-5px,5px);
+        filter: blur(4px);
+        text-shadow: 0px 0px 10px red;
+        
+    }
+
+    80% {
+        transform: translate(-5px,-5px);
+        filter: blur(0px);
+        
+    }
+
+    
+
+    
+}
+
+
+
 @keyframes match {
     25% {
         transform: translateX(3px);
@@ -272,13 +330,23 @@ form .button:hover {
     border: 4px solid white;
     width: fit-content;
     margin: auto;
-    margin-top: 3em;
-    padding: 1em;
+    margin-top: 5em;
+    margin-bottom: 3em;
+    padding: 2em;
+    font-size: 2em;
+    box-shadow: 0px 0px 10px 5px rgb(128, 0, 128), 0px 0px 10px 7px rgba(128, 0, 128, 0.548), 0px 0px 20px 7px rgba(128, 0, 128, 0.288);
 }
 
 .waiting {
     font-size: 1.5em;
+    border: 0px;
+    padding: 1em;
+}
 
+.waiting-ctn {
+    margin: auto;
+    width: fit-content;
+    border: 4px solid white;
 }
 
 span {
@@ -304,17 +372,22 @@ span {
    text-shadow: 0px 0px 5px gold;
    text-shadow: 0px 0px 5px rgba(255, 217, 0, 0.747);
    display: inline-block;
-   animation: 1s linear match infinite;
+   animation: 1s linear match forwards infinite;
 }
 
 .name {
+    display: inline-block;
     color: purple;
+    animation: name 3s linear infinite;
     
 }
+
+
 
 .steam {
     display: block;
     margin: auto;
+    margin-bottom: 1em;
     width: fit-content;
     padding: 1em;
     border: 4px solid rgb(255, 94, 0);
@@ -325,10 +398,43 @@ span {
 
 .steam:hover {
     background-color: green;
-    color: red;
+    color: white;   
     border: 4px solid red;
+    box-shadow: 0px 0px 5px 8px red;
+    
     
 }
+
+
+.leave {
+    font-size: 3em;
+    color: orange;
+    border: 4px solid orange;
+}
+
+.name-leave {
+    display: inline-block;    
+    color: red;
+    text-shadow: 0px 0px 5px red;
+    animation: name-leave 1s linear infinite;
+}
+
+#leave {
+    display: inline-block;
+    color: red;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    animation: leave .3s linear infinite;
+}
+
+.now {
+    border: 0px;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+
 
 /* Mobile Styles */
 
@@ -424,7 +530,30 @@ span {
         box-shadow: 0px 0px 3px 3px rgb(76, 0, 255);
     }
 
+    /* Waiying room styles */
+    .welcome {
+        margin-top: 2em;
+        margin-bottom: 1em;
+        width: 70%;
+        padding: 1em;
+    }
 
+    .waiting-ctn {
+        padding: 1em;
+        width: 70%;
+    }
+
+    .waiting {
+        font-size: 1em;
+        line-height: 1.8em;
+    }
+
+    .steam:active {
+        background-color: green;
+        color: red;
+        border: 4px solid red;
+        
+    }
 
 
 }

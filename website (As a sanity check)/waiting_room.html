@@ -23,20 +23,38 @@
 
     <!-- {% endif %} -->
 
+
+
+    <header>
+        <a href="index.html">
+            <img src="imgs/bonfiresmall.png" alt="" id="logo">
+            <h1>Duh Legion</h1>
+        </a>
+           
+    </header>
+
 </head>
 <body>
     <h1 class="welcome"> Welcome to to the waiting room, <span class="name">{{ name }}</span> </h1>
 
     <!-- {% if match != "none" %} -->
         
-        <p class="waiting"> Holy <span>shit</span> it's time, <span class="merry">merry</span> <span class="christmas">christmas</span> man! </p>
-        <p class="waiting"> Looks like you have to get a fucking gift for <span class="match">{{ match }}</span> </p>
+        <div class="waiting-ctn">
+            <p class="waiting"> Holy <span>shit</span> it's time, <span class="merry">merry</span> <span class="christmas">christmas</span> man! </p>
+            <p class="waiting"> Looks like you have to get a fucking gift for <span class="match">{{ match }}</span> </p>
         
-        <a href="{{steam_url}}" class="steam">You can find em' here!</a>
+        
+            <a href="{{steam_url}}" class="steam">You can find em' here!</a>
+        </div>
+
+
+        
 
     <!--{% else %}-->
 
-    <div> Look {{ name }} it's about time you leave... </div>
+    <p class="leave"> Look <span class="name-leave">{{ name }}</span> it's about time you <span id="leave">leave.</span> </p>
+
+    <p class="now">For now...</p>
 
     <!-- {% endif %} -->
 </body>
