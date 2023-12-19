@@ -36,6 +36,35 @@ def match_the_boys(database):
 
     print("All matched!")
 
+
+def get_user_by_name(database, name):
+    """This function connects to the database, then connects to the 'duh_legion_christmas'
+     collection and checks for the provided IP"""
+    collection = database["duh_legion_christmas"]
+
+    query = { "name": { "$regex": name}}
+
+    result = collection.find(query)
+    for item in result:
+        #print(f"Document: {item}")
+        return item
+    return None
+
+
+def check_steamid(database, id):
+    """This function connects to the database, then connects to the 'duh_legion_christmas'
+     collection and checks for the provided IP"""
+    collection = database["duh_legion_christmas"]
+
+    query = { "steam_id": { "$regex": id}}
+
+    result = collection.find(query)
+    for item in result:
+        #print(f"Document: {item}")
+        return item
+    return None
+
+
 def check_ip_addr(database, addr):
     """This function connects to the database, then connects to the 'duh_legion_christmas'
      collection and checks for the provided IP"""
