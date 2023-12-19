@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    {% if match %}
+
+    <title>Merry Christmas</title>
+
+    {% else %}
+
+    <title>Waiting room</title>
+
+    {% endif %}
+</head>
+<body>
+    <h1> Welcome to christmas land {{ name }} </h1>
+
+    {% if match != "none" %}
+        
+        <div> Holy shit it's time merry christmas man! </div>
+        <div> Looks like you have to get a fucking gift for {{ match }} </div>
+        <br>
+        <a href="{{steam_url}}">You can find em' here!</a>
+
+    {% else %}
+
+    <div> Look {{ name }} it's about time you leave... </div>
+
+    {% endif %}
+</body>
+</html>
