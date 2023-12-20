@@ -9,6 +9,7 @@ from flask import Flask, render_template, request, flash, session, redirect
 
 
 app = Flask(__name__, static_folder="static")
+app.config['APPLICATION_ROOT'] = '/duhchristmas'
 
 database_credentials = (os.getenv("DB_USERNAME"), os.getenv("DB_PASSWORD"))
 steam_api_key = os.getenv("STEAM_API_KEY")
@@ -34,14 +35,16 @@ def register():
             session["name"] = name
             session["steamid"] = steamid
 
-            return redirect("/")
+            return render_template("index.html", name=name)
+
+            #return redirect("/duhchristmas")
         else:
             print("It would appear this account already exists! Or IP at-least.")
     return render_template("form.html", name="none")
 
 
 
-
+@app.route("/duhchristmas")
 @app.route("/")
 def index():
     name = session["name"] if "name" in session else "none"
