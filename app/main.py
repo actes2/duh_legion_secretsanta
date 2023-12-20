@@ -1,15 +1,17 @@
 import os
 import json
 import requests as req
+from dotenv import load_dotenv
 
 import mongo_queries
 import steam_stuff
 
 from flask import Flask, render_template, request, flash, session, redirect
 
+load_dotenv()
 
 app = Flask(__name__, static_folder="static")
-app.config['APPLICATION_ROOT'] = '/duhchristmas'
+#app.config['APPLICATION_ROOT'] = '/duhchristmas'
 
 database_credentials = (os.getenv("DB_USERNAME"), os.getenv("DB_PASSWORD"))
 steam_api_key = os.getenv("STEAM_API_KEY")
@@ -35,16 +37,16 @@ def register():
             session["name"] = name
             session["steamid"] = steamid
 
-            return render_template("index.html", name=name)
+            #return render_template("index.html", name=name)
 
-            #return redirect("/duhchristmas")
+            return redirect("/duhchristmas/waiting_room")
         else:
             print("It would appear this account already exists! Or IP at-least.")
     return render_template("form.html", name="none")
 
 
 
-@app.route("/duhchristmas")
+@app.route("/waiting_room")
 @app.route("/")
 def index():
     name = session["name"] if "name" in session else "none"
@@ -69,7 +71,7 @@ def index():
 
     return render_template("index.html", name=name)
 
-
+# @app.route("/testarino/pizza")
 @app.route("/form")
 def form():
     name = session["name"] if "name" in session else "none"
@@ -77,8 +79,9 @@ def form():
 
 if __name__ == "__main__":
     print("Init!")
-    # print(database_credentials)
+    #print(database_credentials)
     
-    app.secret_key = "Jimmysacoolerguyyyyy" # Change this later to a github session token or something
+    app.config['SECRET_KEY'] = "ZimZoomToDAMADMOON"
+    #app.secret_key = "Jimmysacoolerguyyyyy" # Change this later to a github session token or something
 
     app.run("0.0.0.0", port=80, debug=True)

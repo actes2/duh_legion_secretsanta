@@ -8,3 +8,4 @@ logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0, '/mnt/ActDrive/duhchristmas/app')
 
 from main import app as application
+application.config['SECRET_KEY'] = "ZimZoomToDAMADMOON"
