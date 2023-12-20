@@ -11,27 +11,9 @@ body {
     color: white;
 }
 
-.back {
-    z-index: -1;
-    width: 30%;
-    margin: auto;
-    border-radius: 50%;
-    /*box-shadow: inset 0px 0px 200px 100px rgba(255, 81, 0, 0.137),  0px 0px 200px 50px rgba(255, 81, 0, 0.199); */
-    animation-name: glow;
-    animation-duration: 4s;
-    animation-fill-mode: forwards;
-    animation-iteration-count:infinite;
-    
-}
+ /* Glow Animation for index background*/
 
-
-
-
-
-
-
-
-@keyframes glow {
+ @keyframes glow {
     0%{
         box-shadow: inset 0px 0px 200px 100px rgba(255, 81, 0, 0.137), 0px 0px 200px 50px rgba(255, 81, 0, 0.199);
     }
@@ -44,6 +26,8 @@ body {
         box-shadow: inset 0px 0px 200px 100px rgba(255, 81, 0, 0.137), 0px 0px 200px 50px rgba(255, 81, 0, 0.199);
     }
 }
+
+/* Glow Animation for index background*/
 
 @keyframes formglow {
     0%{
@@ -60,14 +44,97 @@ body {
 }
 
 
-/* Home page main */
+@keyframes name {
+    25% {
+        transform: rotate(5deg) ;
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    
+}
+
+
+@keyframes name-leave {
+    25% {
+        transform: translateY(1px);
+        
+    }
+
+    75% {
+        transform: translateY(-1px);
+        
+    }
+}
+
+@keyframes leave {
+    20% {
+        transform: translate(5px,5px);
+        filter: blur(4px);
+        text-shadow: 0px 0px 10px red;
+    }
+
+    40% {
+        transform: translate(5px,-5px);
+        filter: blur(0);
+    }
+
+    60% {
+        transform: translate(-5px,5px);
+        filter: blur(4px);
+        text-shadow: 0px 0px 10px red;
+        
+    }
+
+    80% {
+        transform: translate(-5px,-5px);
+        filter: blur(0px);
+        
+    }
+
+    
+
+    
+}
+
+
+
+@keyframes match {
+    25% {
+        transform: translateX(3px);
+    }
+    
+    50% {
+        transform: translateX(0px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+}
+
+/* Index Background Container */
+
+.main-ctn {
+    width: 30%;
+    margin: auto;
+    border-radius: 50%;
+    animation-name: glow;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+/* Home page call to action*/
 
 #call {
-    z-index: 100;
+    z-index: 1;
     position: relative;
     background-color: black;
     color: white;
-    padding: 10px 20px;
+    padding: .5em 1em;
     margin: auto;
     margin-bottom: 150px;
     width: fit-content;
@@ -95,19 +162,16 @@ body {
 header {
     border: 4px solid white;
     width: fit-content;
-    margin: 20px;
+    margin: 1em;
     margin-bottom: 0px;
-   
-    
 }
 
 header a {
     display: flex;
 }
 
-
 header h1 {
-    padding: 20px;
+    padding: 1em;
     
 }
 
@@ -123,16 +187,16 @@ a {
 #logo {
     
     
-    width: 40px;
+    width: 4em;
     margin: 8px;
     justify-content: center;
-    border-radius: 300px;
+    border-radius: 50%;
 }
 
 
 /* Sign up or join */
 
-#signUp {
+#btn-ctn {
     display: flex;
     
     margin: auto;
@@ -146,7 +210,7 @@ a {
     border: 4px solid rgb(255, 255, 255);
     background-color: black;
     margin: auto;
-    padding: 20px;
+    padding: 1em;
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
@@ -154,11 +218,6 @@ a {
     animation: grow .1s forwards;
     z-index: 1;
 
-}
-
-
-@keyframes grow {
-    100%{transform: scale(1.05);}
 }
 
 .button:hover {
@@ -172,17 +231,13 @@ a {
     background-color: rgb(199, 199, 199);
 }
 
-
-
-
-
 p {
     z-index: 1;
     background-color: black;
     border: 1px solid white;
     width: fit-content;
-    padding: 20px;
-    margin: 20px auto;
+    padding: 1em;
+    margin: 1em auto;
     font-size: 1em;
 }
 
@@ -194,9 +249,8 @@ p {
 
 /* Form Styling */
 
-.container {
+.form-ctn {
     width: 30%;
-    
     margin: auto;
     margin-top: 240px;
     border-radius: 50%;
@@ -218,17 +272,6 @@ form {
     border: 4px solid white;
 }
 
-form label {
-    background-color: white;
-    
-    color: black;
-    width: 60%;
-    text-align: center;
-    
-    font-weight: bold;
-
-}
-
 form .submit {
     margin-top: 20px;
 }
@@ -237,7 +280,7 @@ input {
     margin-bottom: 25px;
 }
 
-.input {
+label {
     background-color: black;
     align-self: center;
     color: white;
@@ -245,6 +288,8 @@ input {
     padding: 10px 30px;
     margin-bottom: 25px;
     font-size: 1.5rem;
+    width: 60%;
+    text-align: center;
 }
 
 form .button:hover {
@@ -252,4 +297,263 @@ form .button:hover {
     animation: grow .1s forwards;
     color: black;
     box-shadow: 0px 0px 5px 2px rgb(139, 32, 32);
+}
+
+.container-2 {
+    width: 50%;
+    height: 460px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+    margin: auto;
+}
+.success {
+    width: fit-content;
+    padding: 35px 40px;
+    border: 4px solid white;
+    font-size: 2rem;
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+/* Waiting Room styles */
+
+.welcome {
+    border: 4px solid white;
+    width: fit-content;
+    margin: auto;
+    margin-top: 5em;
+    margin-bottom: 3em;
+    padding: 2em;
+    font-size: 2em;
+    box-shadow: 0px 0px 10px 5px rgb(128, 0, 128), 0px 0px 10px 7px rgba(128, 0, 128, 0.548), 0px 0px 20px 7px rgba(128, 0, 128, 0.288);
+}
+
+.waiting {
+    font-size: 1.5em;
+    border: 0px;
+    padding: 1em;
+}
+
+.waiting-ctn {
+    margin: auto;
+    width: fit-content;
+    border: 4px solid white;
+}
+
+span {
+    color: rgb(145, 75, 35);
+}
+
+.merry {
+    color: green;
+    text-transform: uppercase;
+}
+
+.christmas {
+    color: red;
+    padding: .5em;
+    
+    text-transform: uppercase;
+    box-shadow: 0px 0px 3px 3px red;
+    
+}
+
+.match {
+   color: gold;
+   text-shadow: 0px 0px 5px gold;
+   text-shadow: 0px 0px 5px rgba(255, 217, 0, 0.747);
+   display: inline-block;
+   animation: 1s linear match forwards infinite;
+}
+
+.name {
+    display: inline-block;
+    color: purple;
+    animation: name 3s linear infinite;
+    
+}
+
+
+
+.steam {
+    display: block;
+    margin: auto;
+    margin-bottom: 1em;
+    width: fit-content;
+    padding: 1em;
+    border: 4px solid rgb(255, 94, 0);
+    color: rgb(255, 94, 0) ;
+    font-size: 2em;
+    
+}
+
+.steam:hover {
+    background-color: green;
+    color: white;   
+    border: 4px solid red;
+    box-shadow: 0px 0px 5px 8px red;
+    
+    
+}
+
+
+.leave {
+    font-size: 3em;
+    color: orange;
+    border: 4px solid orange;
+}
+
+.name-leave {
+    display: inline-block;    
+    color: red;
+    text-shadow: 0px 0px 5px red;
+    animation: name-leave 1s linear infinite;
+}
+
+#leave {
+    display: inline-block;
+    color: red;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    animation: leave .3s linear infinite;
+}
+
+.now {
+    border: 0px;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+
+
+/* Mobile Styles */
+
+@media (max-width: 500px) {
+    body {
+        box-sizing: border-box;
+    }
+    
+    /* Index Page */
+    
+    header {
+        width: 100vw;
+        margin: 0;
+        border: 0px;
+        border-bottom: 2px solid white;
+        margin-bottom: 1.5em;
+    }
+    #call {
+        font-size: 1em;
+        border: 4px solid white;
+        width: 70%;
+        margin-bottom: 6em;
+    }
+
+    .main-ctn {
+        width: 50%;
+        margin-bottom: 1em;
+    }
+    
+    #main {
+        width: 100%;
+        margin-bottom: 3em;
+        
+    }
+
+    #btn-ctn {
+        width: 100vw;
+        margin-bottom: 3em;
+    }
+
+    
+
+    .button {
+        width: 30%;
+        text-align: center;
+        font-size: 1em;
+        text-wrap: nowrap;
+
+    }
+
+    .button:active {
+        background-color: red;
+        box-shadow: 0px 0px 3px 3px red;
+    }
+
+    p {
+        width: 70%;
+    }
+
+
+    /* Form Styling */
+
+    .form-ctn {
+        width: 80vw;
+        margin: auto;
+        margin-top: 9em;
+    }
+
+    input {
+        width: 50%;
+        margin: auto;
+        margin-bottom: 1.5em;
+    }
+    
+    form {
+        padding: 1em;
+        width: 60%;
+    }
+
+    label {
+        width: 30%;
+        font-size: 1em;
+        margin-bottom: 1.5em;
+    }
+
+    .submit {
+        width: 50%;
+        
+    }
+
+    form .button:active {
+        background-color: rgba(68, 0, 255, 0.911);
+        box-shadow: 0px 0px 3px 3px rgb(76, 0, 255);
+    }
+
+    /* Waiying room styles */
+    .welcome {
+        margin-top: 2em;
+        margin-bottom: 1em;
+        width: 70%;
+        padding: 1em;
+    }
+
+    .waiting-ctn {
+        padding: 1em;
+        width: 70%;
+    }
+
+    .waiting {
+        font-size: 1em;
+        line-height: 1.8em;
+    }
+
+    .steam:active {
+        background-color: green;
+        color: red;
+        border: 4px solid red;
+        
+    }
+
+
 }
