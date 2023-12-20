@@ -5,7 +5,7 @@ import requests as req
 import mongo_queries
 import steam_stuff
 
-from flask import Flask, render_template, request, flash, session
+from flask import Flask, render_template, request, flash, session, redirect
 
 
 app = Flask(__name__, static_folder="static")
@@ -34,7 +34,7 @@ def register():
             session["name"] = name
             session["steamid"] = steamid
 
-            return render_template("index.html", name=name)
+            return redirect("/")
         else:
             print("It would appear this account already exists! Or IP at-least.")
     return render_template("form.html", name="none")
@@ -56,9 +56,11 @@ def index():
 
             if record["match"] != "none":
                 matches_record = mongo_queries.get_user_by_name(datab, record["match"])
-                steam_uri = steam_stuff.get_profile_url_from_steamid(matches_record["steam_id"])
+                if matches_record != None:
+                    steam_uri = steam_stuff.get_profile_url_from_steamid(matches_record["steam_id"])
                 #print("DING")
-                return render_template("waiting_room.html", name=name, match=record["match"], steam_url=steam_uri)
+                    return render_template("waiting_room.html", name=name, match=record["match"], steam_url=steam_uri)
+                return render_template("waiting_room.html", name=name, match=record["match"], steam_url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
             
             return render_template("waiting_room.html", name=name, match=record["match"], steam_url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
